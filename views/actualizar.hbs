@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Jugadores</title>
+</head>
+<body>
+    <main class="container">
+        {{> navegacion}}
+        <form action="/updateJugador" method="post">
+            <input type="hidden" value="{{data._id}}" name="_id" id="_id">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" value="{{data.nombre}}">
+            </div>
+            <div class="mb-3">
+                <label for="fecha" class="form-label">Fecha de nacimiento</label>
+                <input type="date" id="fecha" name="fecha" class="form-control" value="{{data.fecha}}">
+            <div class="mb-3">
+                <label for="dorsal" class="form-label">Dorsal</label>
+                <input type="number" id="dorsal" name="dorsal" class="form-control" value="{{data.dorsal}}">
+
+            <div class="mb-3">
+                <label for="peso" class="form-label">Peso</label>
+                <input type="text" id="peso" name="peso" class="form-control" value="{{data.peso}}">
+            </div>
+
+            <label class="form-label">Elige un Genero</label>
+            <div class="form-check">
+                <input type="radio" id="masculino" name="genero" class="form-check-input" value="m" {{masculino}}>
+                <label class="form-check-label">Masculino</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="femenino" name="genero" class="form-check-input" value="f" {{femenino}}>
+                <label class="form-check-label">Femenino</label>
+            </div>
+            <div class="mb-3">
+                <label for="posicion" class="form-label">Posicion</label>
+                <input type="string" id="posicion" name="posicion" class="form-control" value="{{data.posicion}}">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+        </form>
+
+    </main>
+</body>
+</html>
